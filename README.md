@@ -1,7 +1,7 @@
 # Basic Home Lab Running Active Directory (Oracle VirtualBox) 
 
 <br/>
-<img src="https://i.imgur.com/wJ6nTlQ.png" >
+<img src="https://i.imgur.com/HmATYuu.png" >
 <br />
 
  
@@ -12,7 +12,7 @@ The project consists of a simple Active Directory home lab environment using Ora
 ## Objectives
 
 <br />
-<img src="https://i.imgur.com/fi8aVil.png" >
+<img src="https://i.imgur.com/8kW79OB.png" >
 <br />
 
 In this lab, we will:
