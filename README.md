@@ -63,7 +63,7 @@ Windows Server 2019 requires additional attention during setup to ensure proper 
 
 - Also make sure to select "Custom" install select Drive with Unallocated space (the 20GB we enabled earlier)
   
-- **Create an Admin Account:** As part of the installation, you'll be prompted to create an administrator account. Here, you are automatically given the Administrator username and I have created a unique password for enhanced security. This account will have elevated permissions, so it's crucial to protect it adequately.
+- **Create an Admin Account:** As part of the installation, you'll be prompted to create an administrator account. Here, I provided a username and a robust and unique password for enhanced security. This account will have elevated permissions, so it's crucial to protect it adequately.
 
  <img src="https://i.imgur.com/8fpjadL.png" >
 
@@ -77,8 +77,12 @@ Windows Server 2019 requires additional attention during setup to ensure proper 
 - NIC for Internal Network: The second NIC is allocated exclusively to our internal virtual network, ensuring isolated communication within our simulated environment.
 - This dual NIC setup equips the Domain Controller with the network versatility needed for real-world applications, aligning perfectly with our lab's objectives.
 - Doing so has established a secure yet flexible network topology indispensable for our Active Directory Lab.
-- We will also configure this set up on our DC virtual machine by clicking on the Network icon on the toolbar. Then select "Network & Internet settings" and then select "Change adapter options"
-- You may see two Ethernet networks double click one and a small pop up window will show. Select "Details". Under this window you will see "Autoconfiguration IPv4.." with 
+- We will also configure this set up on our DC virtual machine by clicking on the Network icon on the toolbar. Then select "Network & Internet settings"
+  <p align="left">  <img src="https://i.imgur.com/yFlztPG.png" >
+ 
+- We will then be brought to a new window, look for the option to select "Change adapter options." You may see two Ethernet networks double click one and a small pop up window will show. Select "Details". Under this window you will see "Autoconfiguration IPv4.." with an IP address starting with 169, this is the internal network and we will rename it to "Internal"
+- The second Ethernet option should show an IP address starting with 10, this we will name "Internet". This step is neccessary in order to set up the router in the later steps.
+   <img src="https://i.imgur.com/dTA476a.png" >
 
 
 <!--
