@@ -35,43 +35,50 @@ In this lab, we will:
 ## Installation
 
 ### Create Virtual Machines in VirtualBox
-
+ <img src="https://i.imgur.com/NRgx1ue.png" >
+ 
 - Open Oracle VirtualBox and click "New."
 - Name the first machine as "DC" for Domain Controller and select the Server 2019 ISO image. Check "skip unattended installation" as we will complete this later once the OS is installed on our virtual machine.
 - Assign at least 2 GB of RAM (2048 MB), Set between 1-4 CPU depending on the cores of your processor. If you are unsure leave it at 1. My processer has 8-cores and so I have this set at 4. Lastly, create a new virtual hard disk of at least 20 GB.
+
+<img src="https://i.imgur.com/8HnUOZn.png" >
+
 - Onced finished, go to the Settiing and under Network tab on the left window pane, Enable Network Adapter 2 attached to the Internal Network. 
 
   *Remeber we are creating our Domain Controller right now but we want to have 2 NICs. One dedicated for the internet that is going to be running NAT and we will have the second one that is dedicated for the internal VMWare network.
  
-- Now its time to boot up our DC machine and set up the Server 19 ISO.
+- Now its time to boot up our Domain Controller machine and set up the Server 19 operating system.
 
 ### Installing the Operating Systems and Initial Setup
 
-I initiated the installations by attaching the ISO files to their respective VMs. Windows Server 2019 required additional attention during setup to ensure proper administrative access. Here are the specifics:
+Windows Server 2019 requires additional attention during setup to ensure proper administrative access. Here are the specifics:
 
 - **Install Windows Server 2019:** Follow the on-screen instructions until you reach the account setup stage.
   
-  ![IMG_1735](https://github.com/AmiliaSalva/ActiveDirectoryLab/assets/132176058/9ddc81f9-b45e-4b8c-ba31-9aa044cf92ba)
+  <img src="https://i.imgur.com/MlpU7Os.png" >
+
+- Make sure to select "Standard Evaluation (Desktop Expierence)" on the windows setup page. This option installs the full Windows GUI.
+
+  <img src="https://i.imgur.com/saWUiJx.png" >
+
+- Also make sure to select "Custom" install select Drive with Unallocated space (the 20GB we enabled earlier)
   
-- **Create an Admin Account:** As part of the installation, you'll be prompted to create an administrator account. Here, I provided a username and a robust and unique password for enhanced security. This account will have elevated permissions, so it's crucial to protect it adequately.
+- **Create an Admin Account:** As part of the installation, you'll be prompted to create an administrator account. Here, you are automatically given the Administrator username and I have created a unique password for enhanced security. This account will have elevated permissions, so it's crucial to protect it adequately.
 
-  ![IMG_1737](https://github.com/AmiliaSalva/ActiveDirectoryLab/assets/132176058/67547c2b-797c-4ca2-b4d1-b1a71897ad13)
+ <img src="https://i.imgur.com/8fpjadL.png" >
 
-  ![IMG_1739](https://github.com/AmiliaSalva/ActiveDirectoryLab/assets/132176058/4d16f5ae-3b6c-4ca8-be5a-ff8476ba66b4)
+ <img src="https://i.imgur.com/2fQzu22.png" >
 
 ### Laying Down the Operating Systems and Configuring NICs
 
-I initiated the installation process after attaching the ISO files to their respective VMs. The on-screen instructions are generally straightforward, leading to a successful installation of both operating systems.
-
-In addition, for our Domain Controller, it's imperative to configure dual Network Interface Cards (NICs) for effective network management. Here's how I set them up
-
-- **NIC for Open Internet:** The first NIC is configured to use Network Address Translation (NAT), enabling our Domain Controller to connect to the open Internet.
-  
-- **NIC for Internal Network:** The second NIC is allocated exclusively to our internal virtual network, ensuring isolated communication within our simulated environment.
-
-This dual NIC setup equips the Domain Controller with the network versatility needed for real-world applications, aligning perfectly with our lab's objectives. 
-
-Doing so has established a secure yet flexible network topology indispensable for our Active Directory Lab.
+- Now we have successfully installed our first vitual machine and Domain Controller with the Server 2019 operating systems. 
+- In addition, for our Domain Controller, we configured the dual Network Interface Cards (NICs) for effective network management. As explained earlier, here is how we set them up
+- NIC for Open Internet: The first NIC is configured to use Network Address Translation (NAT), enabling our Domain Controller to connect to the open Internet.
+- NIC for Internal Network: The second NIC is allocated exclusively to our internal virtual network, ensuring isolated communication within our simulated environment.
+- This dual NIC setup equips the Domain Controller with the network versatility needed for real-world applications, aligning perfectly with our lab's objectives.
+- Doing so has established a secure yet flexible network topology indispensable for our Active Directory Lab.
+- We will also configure this set up on our DC virtual machine by clicking on the Network icon on the toolbar. Then select "Network & Internet settings" and then select "Change adapter options"
+- You may see two Ethernet networks double click one and a small pop up window will show. Select "Details". Under this window you will see "Autoconfiguration IPv4.." with 
 
 
 <!--
