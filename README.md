@@ -37,9 +37,13 @@ In this lab, we will:
 ### Create Virtual Machines in VirtualBox
 
 - Open Oracle VirtualBox and click "New."
-- Name the first machine as "DC" and select Microsoft Windows as the type and Windows (64-bit) as the version.
-- Assign at least 2 GB of RAM and create a new virtual hard disk of at least 50 GB.
-- Repeat the process for our Windows 10 machine and name it "CLIENT."
+- Name the first machine as "DC" for Domain Controller and select the Server 2019 ISO image. Check "skip unattended installation" as we will complete this later once the OS is installed on our virtual machine.
+- Assign at least 2 GB of RAM (2048 MB), Set between 1-4 CPU depending on the cores of your processor. If you are unsure leave it at 1. My processer has 8-cores and so I have this set at 4. Lastly, create a new virtual hard disk of at least 20 GB.
+- Onced finished, go to the Settiing and under Network tab on the left window pane, Enable Network Adapter 2 attached to the Internal Network. 
+
+  *Remeber we are creating our Domain Controller right now but we want to have 2 NICs. One dedicated for the internet that is going to be running NAT and we will have the second one that is dedicated for the internal VMWare network.
+ 
+- Now its time to boot up our DC machine and set up the Server 19 ISO.
 
 ### Installing the Operating Systems and Initial Setup
 
